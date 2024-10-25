@@ -3,26 +3,18 @@ let adjs = ["great", "big"];
 let nouns = ["jogger", "racoon"];
 let extensions = [".com", ".net", ".us", ".io"];
 
-// Domain extensions
-console.log("Domain extensions");
-
 for (let pronoun of pronouns) {
   for (let adj of adjs) {
     for (let noun of nouns) {
+      let pronounAdj = "";
       for (let extension of extensions) {
-        console.log(pronoun + adj + noun + extension);
+        pronounAdj = pronoun + adj;
+        console.log("Domain:", pronounAdj + noun + extension);
       }
-    }
-  }
-}
-
-// Domain hacks
-console.log("Domain hacks");
-
-for (let pronoun of pronouns) {
-  for (let adj of adjs) {
-    for (let noun of nouns) {
-      console.log(pronoun + adj + noun.slice(0, -2) + "." + noun.slice(-2));
+      console.log(
+        "Domain hack:",
+        pronounAdj + noun.slice(0, -2) + "." + noun.slice(-2)
+      );
     }
   }
 }
